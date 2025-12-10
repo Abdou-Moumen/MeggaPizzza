@@ -1,0 +1,1374 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    opacity: 1;
+}
+
+
+
+.links {
+    list-style: none;
+    position: relative;
+    display: flex;
+    font-size: 16px;
+    font-weight: 400;
+    font-weight: 200;
+    top: 5px;
+    color: #191F28;
+}
+
+.link {
+    padding: 0 28px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+
+
+@keyframes arrowMove {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.nav-item .links {
+    padding-right: 60px;
+    text-decoration: none;
+    /* Remove underline */
+    font-family: 'Arial', sans-serif;
+    /* Fancy font style, change as needed */
+    font-size: 15px;
+    font-weight: 200;
+    /* Font size */
+    /* Text color */
+    position: relative;
+    /* Required for the pseudo-element */
+    transition: color 0.5s;
+    /* Transition for color */
+}
+
+.nav-item .links::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    /* Adjust as needed */
+    width: 40%;
+    height: 4px;
+    /* Height of the underline */
+    background-color: #191F28;
+    /* Underline color */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+}
+
+.nav-item .links:hover {
+    color: #252c36;
+}
+
+.nav-item .links:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.arrow-down {
+    border-radius: 10px;
+    background: #654121;
+    border-style: none;
+    color: white;
+    font-weight: 700;
+    height: 45px;
+    padding: 5px;
+    position: relative;
+    top: 5px;
+    animation: arrowMove 2s infinite;
+    pointer-events: stroke;
+}
+
+
+
+.first-col {
+    height: 85vh;
+    position: relative;
+}
+
+.above {
+    position: absolute;
+    top: -85px;
+    left: 53%;
+}
+
+.text-Content {
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    transform: translate(-80%, -30%);
+    /* background-color: aqua */
+}
+
+.second-title {
+    position: relative;
+    bottom: 25px;
+}
+
+
+
+.Title {
+    font-weight: 500;
+    font-size: 55px;
+    width: 380px;
+    background-color: #654121;
+    color: #191F28;
+}
+
+.navbar {
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, -5%);
+    width: 90%;
+    padding: 0 50px;
+    z-index: 1;
+}
+
+
+
+
+.Logo {
+    font-weight: 400;
+}
+
+
+
+
+
+/* Fitsy section */
+.Fitsy {
+    /* background-color: aquamarine; */
+    /* height: 100%; */
+    position: relative;
+    top: 120px;
+}
+
+/* Image Column */
+.img_Fitsy {
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    height: 450px;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+/* Text Column */
+.txt {
+    color: #191F28;
+    font-weight: 500;
+}
+
+.main_txt {
+    font-size: 55px;
+    text-align: left;
+}
+
+.description {
+    text-align: left;
+    /* padding: 0 20px; */
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: 200;
+    width: 100%;
+}
+
+.Menue {
+    border-style: none;
+    padding: 10px 40px;
+    border-radius: 5px;
+    font-weight: 700;
+    background: #654121;
+    color: white;
+    font-size: 18px;
+    font-weight: 200;
+    margin-top: 15px;
+    position: absolute;
+    left: 0px;
+}
+
+/* Tablet view: Stack image and text vertically */
+@media (max-width: 992px) {
+
+    .Fitsy {
+        position: relative;
+        left: 30px;
+    }
+
+    .img_Fitsy {
+        order: 1;
+        /* Image comes first */
+    }
+
+    .text_Fitsy {
+        order: 2;
+        /* Text comes second */
+    }
+
+    .main_txt {
+        font-size: 46px;
+        /* Adjust font size for tablet */
+        text-align: center;
+    }
+
+    .main {
+        padding: 30px 0;
+        height: 390px;
+        padding-bottom: 70px;
+    }
+
+    .description {
+        text-align: center;
+        width: 100%;
+        font-size: 17px;
+        padding: 0 25px;
+        padding-top: 20px;
+        /* Adjust font size for tablet */
+    }
+
+    .Menue {
+        margin-top: 20px;
+        position: static;
+    }
+
+    .above {
+        position: absolute;
+        top: -160px;
+        right: -40px;
+    }
+
+    .wrapper2 {
+        background-color: #654121;
+        position: relative;
+        top: 350px;
+    }
+
+}
+
+
+
+/* Hide menu on small screens and show toggle button */
+@media (max-width: 768px) {
+
+    .links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        z-index: -1;
+    }
+
+    .link {
+        color: transparent;
+    }
+
+    .links.active {
+        display: flex;
+    }
+
+    .navbar-toggler {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 5;
+    }
+
+    .navbar-toggler .bar {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background-color: #ffffff;
+        margin: 5px 0;
+    }
+
+    .navbar-toggler-icon {
+        background-color: #ffffff;
+        color: white;
+    }
+
+    .arrow-down {
+        position: relative;
+        top: 5px;
+        animation: arrowMove 2s infinite;
+    }
+
+    .Title {
+        text-align: center;
+    }
+
+
+    .buttons {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* Part of the banner */
+
+.wrapper2 {
+    background-color: #654121;
+    position: relative;
+}
+
+.text_content {
+    position: relative;
+    left: 90px;
+}
+
+.col-banner {
+    position: relative;
+    background-color: #654121;
+    padding: 30px 0;
+
+}
+
+.col_banner_text {
+    color: white;
+    font-weight: 400;
+    font-size: 45px;
+    position: relative;
+    right: 40px;
+    bottom: 13px;
+}
+
+.col_banner_description {
+    position: relative;
+    right: 15px;
+    bottom: 5px;
+    color: white;
+    font-weight: 300;
+    font-size: 18px;
+    text-align: left;
+}
+
+
+/* Default: PC view (4 columns in 1 row) */
+.wrapper2 .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wrapper2 .col {
+    flex: 1;
+    text-align: center;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .above {
+        position: absolute;
+        top: -155px;
+        left: 40%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .col_banner_text {
+        font-weight: 400;
+        font-size: 35px;
+        position: relative;
+        right: 25px;
+    }
+
+    .second_row {
+        position: relative;
+        right: 30px;
+    }
+
+    .wrapper2 .col {
+        flex: 0 0 50%;
+    }
+}
+
+
+/* Third Section */
+
+.third_section_spacing {
+    padding: 40px 40px;
+}
+
+
+.svg_element_position {
+    position: relative;
+    top: 16px;
+    right: 50px;
+}
+
+.content_of_the_third_section,
+.content_of_the_third_section_img {
+    position: relative;
+    left: 55px;
+}
+
+.lower_text {
+    width: 200px;
+}
+
+.backpack,
+.wallet,
+.earth {
+    height: 130px;
+    object-fit: cover;
+    position: relative;
+    right: 10px;
+}
+
+.header_txt_img {
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.lower_text_img {
+    width: 200px;
+}
+
+.content_of_the_third_section_img {
+    bottom: 20px;
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container_all_the_cards_of_the_Third_Section {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .third_section_spacing {
+        position: relative;
+        top: 400px;
+        left: 15px;
+    }
+
+    .svg_element_position {
+        position: relative;
+        right: 45px;
+        top: 20px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .container_all_the_cards_of_the_Third_Section {
+        flex: 0 0 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        left: 35px;
+        top: 400px;
+    }
+
+    .svg_element_position {
+        position: relative;
+        right: 110px;
+        top: 20px;
+    }
+
+    .header_txt_img,
+    .lower_text_img {
+        /* background-color: aqua; */
+        width: 200px;
+        text-align: center;
+        position: relative;
+        left: 10px;
+    }
+
+    .third_section_spacing {
+        position: relative;
+        top: 0;
+    }
+
+    .header_txt_Main,
+    .lower_text_MAin {
+        width: 400px;
+    }
+
+    .content_of_the_third_section,
+    .content_of_the_third_section_img {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .backpack,
+    .wallet,
+    .earth {
+        height: 200px;
+        right: 0px;
+        margin: 0 auto;
+    }
+
+    .earth {
+        height: 200px;
+        right: 6px;
+        margin: 0 auto;
+    }
+}
+
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper3,
+.wrapper2,
+.wrapper,
+.row,
+.container_all_the_cards_of_the_Third_Section,
+.content_of_the_third_section,
+.content_of_the_third_section_img {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Forth Page */
+
+.left_img {
+    height: 600px;
+    object-fit: cover;
+}
+
+.forth_card {
+    margin: 0 40px;
+}
+
+.Discover_btn {
+    border-style: none;
+    padding: 10px 40px;
+    border-radius: 5px;
+    font-weight: 700;
+    background: #654121;
+    color: white;
+    font-size: 18px;
+}
+
+.title_for_forth_page {
+    font-weight: 500;
+    width: 100%;
+    /* Flex and grid will manage the layout */
+    color: #191F28;
+}
+
+.description_for_hotel {
+    font-weight: 300;
+    font-size: 22px;
+    color: #191F28;
+}
+
+.text_placement_for_forth {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.links_styl {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.link_for_hotel_room {
+    list-style-type: disc;
+}
+
+.link_for_hotel_room {
+    color: initial;
+    position: relative;
+    left: 20px;
+}
+
+.link_for_hotel_room::marker {
+    color: #654121;
+}
+
+.positioning_the_second_content {
+    position: relative;
+    /* left: 40px; */
+}
+
+.positioning_the_first_content {
+    position: relative;
+    right: 40px;
+}
+
+
+@media (max-width: 767px) {
+
+    .wrapper4 {
+        /* background-color: aqua; */
+        position: relative;
+        top: 450px;
+    }
+
+    .link_for_hotel_room {
+        position: relative;
+        right: 50px;
+        list-style: none;
+        text-align: center;
+    }
+
+    .title_for_forth_page,
+    .description_for_hotel {
+        text-align: center;
+    }
+
+    .title_for_forth_page {
+        font-size: 35px;
+        font-weight: 800;
+    }
+
+    .Discover_btn {
+        position: absolute;
+        left: 49%;
+        bottom: -10px;
+        transform: translate(-49%, 10px);
+    }
+
+
+    .positioning_the_first_content {
+        position: relative;
+        left: 40px;
+    }
+
+    .links_styl {
+        position: relative;
+        right: 20px;
+    }
+
+    .positioning_the_second_content {
+        position: relative;
+        top: 30px;
+    }
+}
+
+/* For very small phones (screen width less than 480px) */
+@media (max-width: 479px) {
+
+
+    .link_for_hotel_room {
+        position: relative;
+        right: 0;
+        list-style: none;
+        text-align: center;
+        font-size: 14px;
+        /* Smaller font size for smaller screens */
+    }
+
+    .title_for_forth_page,
+    .description_for_hotel {
+        text-align: center;
+        font-size: 18px;
+        /* Smaller font size for titles and descriptions */
+    }
+
+    .Discover_btn {
+        position: absolute;
+        left: 50%;
+        bottom: -5px;
+        /* Adjusted positioning */
+        transform: translate(-50%, 5px);
+        padding: 8px 50px;
+        /* Smaller button size */
+        font-size: 12px;
+    }
+
+    .positioning_the_first_content {
+        position: relative;
+        left: 20px;
+        /* Adjusted for smaller screens */
+    }
+
+    .positioning_the_second_content {
+        position: relative;
+        top: 15px;
+        /* Adjusted for smaller screens */
+    }
+}
+
+
+
+/* The Fifth Page */
+
+.wrapper5 {
+    background-color: #F6F5F1;
+    width: 100vw;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.title_explore {
+    color: #654121;
+    font-weight: 500;
+    font-size: 22px;
+    text-align: center;
+}
+#title_explore_for_rooms {
+    color: #654121;
+    font-weight: 500;
+    font-size: 22px;
+    text-align: center;
+}
+
+.hotel_title {
+    color: #191F28;
+    font-weight: 800;
+    font-size: 40px;
+    text-align: center;
+}
+#hotel_title_for_room {
+    color: #191F28;
+    font-weight: 800;
+    font-size: 40px;
+    text-align: center;
+}
+
+.description_the_hotel {
+    color: #191F28;
+    padding: 0 120px;
+    font-weight: 300;
+    font-size: 18px;
+    text-align: center;
+}
+
+#description_the_hotel_for_rooms{
+    color: #191F28;
+    padding: 0 120px;
+    font-weight: 300;
+    font-size: 18px;
+    text-align: center;
+}
+
+.title_the_card {
+    padding: 10px 0;
+    color: #191F28;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.card_for_more_info {
+    position: relative;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 10px 43px -44px rgba(71, 71, 71, 0.34);
+    width: 100%;
+    max-width: 300px;
+    /* Ensure the cards don't get too wide */
+}
+
+.main_card_img {
+    padding-top: 20px;
+    height: 90px;
+    object-fit: cover;
+}
+
+.main_card_img_opacity {
+    height: 160px;
+    object-fit: cover;
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .wrapper5 {
+        position: relative;
+        top: 450px;
+    }
+}
+
+@media (max-width: 767px) {
+    .wrapper5 {
+        position: relative;
+        top: 550px;
+    }
+}
+
+
+/* Sixth Page */
+
+.wrapper6 {
+    background-color: white;
+    width: 100vw;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .wrapper6 {
+        position: relative;
+        top: 450px;
+    }
+}
+
+@media (max-width: 767px) {
+    .wrapper6 {
+        position: relative;
+        top: 550px;
+    }
+}
+
+.card_for_more_info_for_rooms_and_suits {
+    height: 500px;
+    width: 400px;
+    box-shadow: 2px 10px 43px -21px rgba(0, 0, 0, 0.39);
+    -webkit-box-shadow: 2px 10px 43px -21px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 2px 10px 43px -21px rgba(0, 0, 0, 0.39);
+}
+
+.img_container {
+    position: relative;
+    background-color: #252c36;
+    width: 100%;
+    height: 50%;
+    top: 0;
+    left: 0;
+}
+
+.main_card_img_for_rooms_and_suits {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+.details_the_card_for_rooms_and_suits {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    top: 30px;
+}
+
+.offers {
+    height: 35px;
+    object-fit: cover;
+    position: relative;
+    top: 20px;
+    padding: 0 15px;
+}
+
+.title_the_card_for_rooms_and_suits {
+    padding: 10px 10px;
+    border-radius: 15px;
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rooms {
+    border-style: none;
+    background-color: #654121;
+    padding: 10px 30px;
+    color: white;
+}
+
+.proce_per_day {
+    padding-right: 10px;
+}
+
+@media (max-width: 767px) {
+    .card_for_more_info_for_rooms_and_suits {
+        width: 60%;
+    }
+}
+
+
+/* Seventh Page */
+
+.positioning_the_second_content_for_community {
+    position: relative;
+    right: 20px;
+}
+
+.positioning_the_first_content_for_community {
+    position: relative;
+    left: 20px;
+}
+
+.Discover_btn_for_community {
+    position: relative;
+    top: 30px;
+}
+.Discover_btn_for_QA {
+    position: relative;
+    top: 30px;
+}
+
+.title_for_forth_page_for_community {
+    position: relative;
+    bottom: 30px;
+}
+.title_for_forth_page_for_QA {
+    position: relative;
+    bottom: 30px;
+}
+
+
+.description_for_community {
+    font-weight: 300;
+    font-size: 20px;
+    color: #191F28;
+}
+.description_for_QA {
+    font-weight: 300;
+    font-size: 20px;
+    color: #191F28;
+}
+
+.Discover_btn_for_community,.Discover_btn_for_QA {
+    border-style: none;
+    padding: 10px 40px;
+    border-radius: 5px;
+    font-weight: 700;
+    background: #654121;
+    color: white;
+    font-size: 18px;
+}
+
+@media (max-width: 767px) {
+
+    .positioning_the_forth_page_for_community {
+        position: relative;
+        top: 620px;
+    }
+
+    .positioning_the_second_content_for_community {
+        position: relative;
+        right: 0;
+    }
+
+    .positioning_the_first_content_for_community {
+        position: relative;
+        left: 0;
+    }
+
+    .title_for_forth_page_for_community {
+        position: relative;
+        font-size: 35px;
+    }
+
+    .svg_community {
+        width: 370px;
+    }
+
+    .Discover_btn_for_community {
+        position: relative;
+        top: 20px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .text_placement_for_forth_for_community {
+        position: relative;
+        font-size: 30px;
+        right: 40px;
+    }
+
+    .title_for_forth_page_for_community {
+        font-size: 26px;
+        top: 5px;
+    }
+
+    .description_for_community {
+        top: 10px;
+    }
+
+    .svg_community {
+        width: 400px;
+        position: relative;
+        left: 20px;
+    }
+
+    .wrapper7 {
+        position: relative;
+        top: 400px;
+        right: 30px;
+    }
+}
+
+
+/* Eighth Page */
+
+.blue{
+    height: 70px;
+}
+
+.content_for_testimony{
+    /* background-color: aqua; */
+    position: relative;
+    height: 100vh;
+}
+
+.title_fo_testimony{
+    position: absolute;
+    top: 50px;
+    left: 00px;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.btns_for_arrows{
+    position: absolute;
+    right: -300px;
+    top: 15%;
+}
+.arrows{
+    height: 60px;
+}
+
+.card_for_testimonial{
+    position: relative;
+    height: 250px;
+}
+
+.test_icon{
+    height: 40px;
+}
+
+.Person{
+    height: 130px;
+    position: absolute;
+    top: 120%;
+    left: -30px;
+    transform: translateY(-120%);
+}
+
+.name{
+    font-size: 18px;
+    position: relative;
+    top: 5px;
+}
+
+.testimaonial_desc{
+    position: relative;
+    top: 20px;
+    width: 80%;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.role{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.star{
+    height: 20px;
+}
+
+.conten_detail{
+    position: absolute;
+    top: 95%;
+    left: 90px;
+    transform: translateY(-95%);
+}
+
+.stars{
+    position: relative;
+    bottom: 5px;
+}
+
+.content_for_cards{
+    position: absolute;
+    top: 60%;
+    transform: translateY(-60%);
+}
+
+
+.content_for_cards_unic{
+    position: relative;
+    top: 250px;
+}
+
+.blue{
+    position: relative;
+    top: 5px;
+    right: 19px;
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .wrapper8{
+        position: relative;
+        top: 550px;
+    }
+    .content_for_cards{
+        position: relative;
+        top: 600px;
+    }
+    .test_icon{
+        position: relative;
+        top: 140px;
+    }
+    .testimaonial_desc{
+        width: 60%;
+        position: relative;
+        top: 155px;
+    }
+    .Person{
+        position: relative;
+        top: 290px;
+    }
+    .conten_detail{
+        top: 335px;
+        left: 100px;
+    }
+    .card_for_testimonial{
+        position: relative;
+        left: 25%;
+       }
+   
+    
+}
+@media (max-width: 767px) {
+    .wrapper8{
+        position: relative;
+        top: 550px;
+    }
+    .content_for_cards{
+        position: relative;
+        top: 600px;
+    }
+    .test_icon{
+        position: relative;
+        top: 140px;
+    }
+    .testimaonial_desc{
+        width: 60%;
+        position: relative;
+        top: 155px;
+    }
+    .Person{
+        position: relative;
+        top: 290px;
+    }
+    .conten_detail{
+        top: 360px;
+        left: 100px;
+    }
+   .card_for_testimonial{
+    position: relative;
+    left: 25%;
+   }
+   .btns_for_arrows{
+    position: absolute;
+    right: -25%;
+    height: 10px;
+    top: 20%;
+}
+.title_fo_testimony{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+    
+}
+
+/* Ninth Page */
+
+.QA_second{
+    position: relative;
+    left: 20px;
+}
+
+.svg_communoty_QA{
+    position: relative;
+    right: 20px;
+}
+
+
+
+@media (max-width: 767px) {
+
+    .positioning_the_forth_page_for_community {
+        position: relative;
+        top: 620px;
+    }
+
+    .positioning_the_second_content_for_community {
+        position: relative;
+        right: 0;
+    }
+
+    .positioning_the_first_content_for_community {
+        position: relative;
+        left: 0;
+    }
+
+    .title_for_forth_page_for_community {
+        position: relative;
+        font-size: 35px;
+    }
+
+    .svg_communoty {
+        width: 370px;
+    }
+    .svg_communoty_QA{
+        position: relative;
+        left: 0;
+    }
+
+    .Discover_btn_for_community {
+        position: relative;
+        top: 20px;
+    }
+
+    .wrapper9 {
+        position: relative;
+        top: 1000px;
+        right: 30px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .text_placement_for_forth_for_community {
+        position: relative;
+        font-size: 30px;
+        right: 40px;
+    }
+
+    .title_for_forth_page_for_community {
+        font-size: 26px;
+        top: 5px;
+    }
+
+    .description_for_community {
+        top: 10px;
+    }
+
+    .svg_community {
+        width: 400px;
+        position: relative;
+        left: 20px;
+    }
+
+    .wrapper9 {
+        position: relative;
+        top: 1000px;
+        /* right: 30px; */
+    }
+    .wrapper10{
+        position: relative;
+        top: 1000px;
+    }
+}
+
+
+/* Footer */
+
+.wrapper10{
+    background-color: black;
+    color: white;
+    height: 25vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+@media (max-width: 767px) {
+
+    .wrapper10{
+        position: relative;
+        top: 1050px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+    .wrapper10{
+        position: relative;
+        top: 1070px;
+    }
+}
+
+
+
+
+.card_for_testimonial {
+    transform: translateY(20px); /* Start with a slight translation */
+    transition: opacity 0.5s, transform 0.5s; /* Smooth transition */
+}
+
+.title_fo_testimony,
+.btns_for_arrows {
+    transform: translateY(20px); /* Start with a slight translation */
+    transition: opacity 0.5s, transform 0.5s; /* Smooth transition */
+}
+
+
