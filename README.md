@@ -17,7 +17,8 @@
     <td align="center"><img src="Mega_img/Page2.png" width="340" alt="Menu"/><br/><sub><b>Menu</b></sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="Mega_img/Page3.png" width="340" alt="About Us"/><br/><sub><b>About Us</b></sub></td>
+    <td align="center"><img src="Mega_img/Page3.png" width="340" alt="About Us"/><br/><sub><b>Menu</b></sub></td>
+    
     <td align="center"><img src="Mega_img/Page4.png" width="340" alt="Contact"/><br/><sub><b>Contact</b></sub></td>
   </tr>
 </table>
