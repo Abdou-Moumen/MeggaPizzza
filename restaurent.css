@@ -1,0 +1,942 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #101116;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    opacity: 0; 
+}
+
+.background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/background.png') no-repeat center center;
+    background-size: cover;
+    filter: blur(10px); /* Start with no blur */
+    z-index: -1; /* Ensure it’s behind other content */
+    transition: filter 1s ease; /* Smooth transition for filter change */
+}
+
+
+
+
+
+
+
+.links {
+    list-style: none;
+    position: relative;
+    display: flex;
+    font-size: 20px;
+    font-weight: 500;
+    top: 10px;
+}
+
+.link {
+    padding: 0 28px;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+}
+
+
+
+
+@keyframes arrowMove {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.nav-item .links {
+    padding-right: 60px;
+    text-decoration: none;
+    /* Remove underline */
+    font-family: 'Arial', sans-serif;
+    /* Fancy font style, change as needed */
+    font-size: 18px;
+    /* Font size */
+    /* Text color */
+    position: relative;
+    /* Required for the pseudo-element */
+    transition: color 0.5s;
+    /* Transition for color */
+}
+
+.nav-item .links::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    /* Adjust as needed */
+    width: 40%;
+    height: 4px;
+    /* Height of the underline */
+    background-color: rgb(255, 255, 255);
+    /* Underline color */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+}
+
+.nav-item .links:hover {
+    color: rgb(255, 255, 255);
+    /* Text color on hover */
+}
+
+.nav-item .links:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.arrow-down {
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #950314, #4a030b);
+    border-style: none;
+    color: white;
+    font-weight: 700;
+    height: 50px;
+    padding: 5px;
+    position: relative;
+    top: 15px;
+    right: 60px;
+    animation: arrowMove 2s infinite;
+    pointer-events: stroke;
+}
+
+.MiggaLogo {
+    position: relative;
+    left: 8%;
+}
+
+.first-Section {
+    position: absolute;
+    width: 100%;
+    height: 85%;
+    bottom: 0;
+    left: 0;
+    z-index: 6;
+}
+
+.blender {
+    position: absolute;
+    bottom: -20px;
+    right: 200px;
+    transform: translate(-200px,20px);
+    z-index: 6;
+}
+
+.bluredPepper {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translate(-50%, 50px);
+    z-index: 6;
+}
+
+.blender {
+    position: absolute;
+    bottom: -60px;
+    left: -20px;
+    z-index: 6;
+}
+
+.bluredPepper-img {
+    height: 200px;
+    filter: blur(3px);
+    object-fit: cover;
+}
+
+.first-col {
+    /* background-color: rgb(0, 48, 48); */
+    height: 85vh;
+    position: relative;
+}
+
+.text-Content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+.second-title {
+    position: relative;
+    bottom: 25px;
+}
+
+.description {
+    position: relative;
+    bottom: 15px;
+    font-size: 20px;
+    width: 130%;
+    font-weight: 300;
+    color: white;
+}
+
+.Title {
+    font-weight: 900;
+    font-size: 70px;
+    color: white;
+}
+
+.navbar {
+    position: relative;
+    z-index: 1;
+}
+
+.Menue {
+    border-style: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    margin-right: 14px;
+    font-weight: 700;
+    background: linear-gradient(to bottom, #950314, #4a030b);
+    color: white;
+    /* Optional: Set text color to white for better readability */
+}
+
+
+.Explore {
+    border-style: none;
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 700;
+    border: 1px solid white;
+    background-color: transparent;
+}
+
+.second-col {
+    /* background-color: brown; */
+    height: 85vh;
+    position: relative;
+}
+
+.Whole-pizza{
+    position: absolute;
+    top: -20px;
+}
+
+.circle {
+    position: absolute;
+    top: 5%;
+    right: 22%;
+    transform: translate(-22%, 5%);
+    width: 400px;
+    height: 400px;
+    background-color: #563B27;
+    border-radius: 50%;
+    opacity: 0.7;
+    box-shadow:
+        0 0 30px 15px rgba(86, 59, 39, 0.8),
+        0 0 60px 30px rgba(86, 59, 39, 0.6),
+        0 0 90px 45px rgba(86, 59, 39, 0.4),
+        0 0 120px 60px rgba(86, 59, 39, 0.3),
+        0 0 150px 75px rgba(86, 59, 39, 0.2),
+        0 0 180px 90px rgba(86, 59, 39, 0.1);
+    filter: blur(8px);
+}
+
+.circle2 {
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    transform: translate(-10%, 5%);
+    width: 400px;
+    height: 400px;
+    background-color: #563B27;
+    border-radius: 50%;
+    opacity: 0.7;
+    box-shadow:
+        0 0 30px 15px rgba(86, 59, 39, 0.8),
+        0 0 60px 30px rgba(86, 59, 39, 0.6),
+        0 0 90px 45px rgba(86, 59, 39, 0.4),
+        0 0 120px 60px rgba(86, 59, 39, 0.3),
+        0 0 150px 75px rgba(86, 59, 39, 0.2),
+        0 0 180px 90px rgba(86, 59, 39, 0.1);
+    filter: blur(8px);
+}
+
+.pizza {
+    position: absolute;
+    width: 60%;
+    height: 70%;
+    /* background-color: aquamarine; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.pizza-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 30px;
+    /* background-color: blue; */
+}
+
+.pizza1 {
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+
+.pizza2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.Pizza1-slice,
+.Pizza2-slice {
+    height: 470px;
+    object-fit: cover;
+}
+
+.responsive-img,
+.Pepper {
+    width: 120px;
+    object-fit: cover;
+}
+
+.Pepper {
+    width: 150px;
+    transform: rotate(24.43deg);
+    position: relative;
+    top: 20px;
+}
+
+.rightFire {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    z-index: 4;
+    width: 400px;
+    object-fit: cover;
+    z-index: 10;
+}
+
+.topFire {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    /* z-index: 4; */
+}
+
+.toptop {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(-0, 0);
+    z-index: 5;
+}
+
+.down {
+    position: absolute;
+    right: 5px;
+    bottom: 10px;
+    transform: translate(-10px, -5px);
+    z-index: 5;
+}
+
+.leftFire {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    /* z-index: 4; */
+}
+
+.centerFire {
+    position: absolute;
+    left: 0%;
+    top: 0;
+    transform: translate(-50%, 0);
+    z-index: 4;
+}
+
+.Fire {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    z-index: 4;
+    opacity: 0.5;
+}
+
+
+
+/* Hide menu on small screens and show toggle button */
+@media (max-width: 768px) {
+
+    .links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        z-index: -1;
+    }
+
+    .link {
+        color: transparent;
+    }
+
+    .links.active {
+        display: flex;
+    }
+
+    .navbar-toggler {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 5;
+    }
+
+    .navbar-toggler .bar {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background-color: #ffffff;
+        margin: 5px 0;
+    }
+
+    .navbar-toggler-icon {
+        background-color: #ffffff;
+        color: white;
+    }
+
+    .arrow-down {
+        position: relative;
+        top: 35px;
+        right: 30px;
+        animation: arrowMove 2s infinite;
+    }
+
+    .Title {
+        text-align: center;
+    }
+
+    .description {
+        text-align: center;
+        right: 40px;
+    }
+
+    .responsive-img {
+        position: relative;
+        left: 30px;
+        top: 30px;
+        width: 100px;
+        object-fit: cover;
+    }
+
+    .buttons{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .bluredPepper{
+        height: 50px;
+        object-fit: cover;
+    }
+
+    .bluredPepper {
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translate(-50%, 10px);
+        z-index: 6;
+    }
+    .blender {
+        position: absolute;
+        bottom: -50px;
+        right: 200px;
+        transform: translate(-200px,50px);
+        z-index: 6;
+    }
+
+    .leaf{
+        position: absolute;
+        z-index: 22;
+        top: 0;
+        right: 0;
+    }
+
+}
+
+/* Target tablets in portrait and landscape mode */
+@media (min-width: 600px) and (max-width: 1024px) {
+
+    .pizza {
+        position: absolute;
+        width: 80%;
+        height: 70%;
+        /* background-color: aquamarine; */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
+    .Pizza1-slice,
+    .Pizza2-slice {
+        height: 400px;
+        object-fit: cover;
+    }
+
+
+    .circle {
+        position: absolute;
+        top: 5%;
+        right: 22%;
+        transform: translate(-22%,5%);
+        width: 200px;
+        height: 200px;
+    }
+    .circle2{
+        position: absolute;
+        bottom: 5%;
+        right: 0%;
+        transform: translate(-0%,5%);
+        width: 200px;
+        height: 200px;
+        background-color: #563B27;
+    }
+
+    .pizza1 {
+        position: absolute;
+        top: 5%;
+        right: 0%;
+        transform: translate(-0%,5%);
+    }
+    
+    .pizza2 {
+        position: absolute;
+        top: 5%;
+        right: 0%;
+        transform: translate(-0%,5%);
+    }
+
+    .buttons{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}
+
+
+
+
+/* Page 2 */
+.wrapper2 {
+    position: relative;
+    width: 100%;
+    padding-top: 200px; /* Add padding to maintain vertical spacing */
+    padding-bottom: 200px; /* Add padding to maintain vertical spacing */
+}
+
+.title-placement {
+    font-size: 70px;
+    margin-bottom: 50px;
+}
+
+/* Adjust button styles */
+.menue-btn {
+    font-size: 20px;
+    color: #B6B6B6;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border-style: none;
+    background-color: #24252A;
+}
+.menue-btn-order {
+    font-size: 17px;
+    position: relative;
+    bottom: 80px;
+    color: white;
+    border-radius: 15px;
+    padding: 10px 15px;
+    border-style: none;
+    background-color: #515151;
+}
+.box{
+    height: 420px;
+    width: 260px;
+    background-color: #1B191F;
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.last-Container{
+    position: relative;
+}
+
+.first-container{
+    position: relative;
+}
+
+.BluredDownPepper{
+    position: absolute;
+    top: 33%;
+    left: -60px;
+    height: 250px;
+    filter: blur(2px);
+    object-fit: cover;
+    z-index: -2;
+}
+
+
+.img-of-pizza{
+    position: relative;
+    right: 35px;
+    bottom: 40px;
+}
+
+.title-card{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%,-55%);
+    color: white;
+    
+    font-weight: 600;
+}
+
+.title-card-price{
+    position: absolute;
+    left: 60px;
+    bottom: 5%;
+    transform: translateY(-5%);
+    width: 100%;
+    color: white;
+    font-weight: 600;
+}
+
+.btn-orders{
+    position: absolute;
+    bottom: 20%;
+    transform: translateY(-20%);
+    left: 2px;
+    color: white;
+    font-weight: 600;
+}
+
+.pizza-style{
+    height: 330px;
+    object-fit: cover;
+}
+
+.activate-the-btn{
+    background: linear-gradient(to bottom, #950314, #4a030b);
+    font-weight: 700;
+    color: white;   
+}
+
+.boxes-wrapper{
+    margin-top: 70px;
+}
+
+.leaf{
+    position: absolute;
+    z-index: 22;
+    top: -120px;
+    right: -60px;
+    z-index: -2;
+}
+
+.Tomato{
+    position: absolute;
+    z-index: 22;
+    bottom: -120px;
+    right: -60px;
+    z-index: -2;
+    filter: blur(5px);
+}
+
+/* Page 3 */
+
+.wrapper3 {
+    position: relative;
+    width: 100%;
+    padding-top: 100px;
+    background-color: #26262B;
+    height: 80vh;
+}
+
+.text-column {
+    color: white;
+    position: absolute;
+    width: 60%;
+    left: 20%;
+    top: 50%;
+    transform: translate(-20%,-50%);
+    text-align: left;
+    padding: 20px;
+    z-index: 2; /* Ensure text appears above the image */
+}
+
+.contact-title {
+    font-size: 30px;
+    font-weight: 200;
+}
+
+.contact-text {
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 55px;
+    width: 450px;
+}
+
+.social-icons {
+    position: relative;
+    right: 15px;
+    top: 20px;
+}
+
+.social-icons .icon {
+    width: 40px;
+    margin: 0 10px;
+    pointer-events: painted;
+}
+
+.image-column {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%; /* Ensures it takes half of the wrapper width */
+    overflow: hidden;
+    z-index: 1; /* Image is behind the text */
+}
+
+.dish-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%; /* Ensures it covers the entire column */
+    object-fit: cover; /* Keeps the aspect ratio while covering the area */
+}
+
+.onion-img, .pepper-img {
+    position: absolute;
+    z-index: 2; /* Ensure these images are on top of everything */
+}
+.sparkels-img {
+    position: absolute;
+    z-index: 55; /* Ensure these images are on top of everything */
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.onion-img {
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    object-fit: cover;
+}
+
+.pepper-img {
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    object-fit: cover;
+}
+
+
+
+/* Page 4 */
+
+.wrapper4 {
+    position: relative;
+    width: 100%;
+    padding-top: 60px; /* Add padding to maintain vertical spacing */
+}
+
+.copy{
+    position: relative;
+    bottom: 30px;
+    font-size: 22px;
+    color: white;
+    font-weight: 300;
+}
+
+.box {
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden; /* To ensure that images do not overflow */
+}
+
+
+
+
+
+body{
+    scroll-behavior: smooth;
+}
+
+
+.firee2{
+    position: absolute;
+    left: 30%;
+}
+.firee3{
+    position: absolute;
+    left: 90%;
+}
+
+
+
+
+.animatedcontainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(
+    45deg,
+    #000000, 
+    #1f1f1f, 
+    #1b1b1b, 
+    #303030, 
+    #1b1b1b, 
+    #1f1f1f
+  );
+    background-size: 400% 400%;
+    animation: heatWave 15s ease infinite;
+    z-index: 3;
+  }
+
+  @keyframes heatWave {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+
+  .animatedcontainer1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgb(252, 230, 250);
+    z-index: 2;
+  }
+  
+  .animatedcontent {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+    width: 500px;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .animation_svg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100vw;
+    z-index: 55;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.svg{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50vh;
+    width: 50vw;
+}
+.animatio_for_into{
+    position: fixed;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, 5%);
+    font-size: 500px;
+    font-weight: 800;
+    color: white;
+}
+  .logoname {
+    font-weight: var(--font-weight);
+    font-size: 50px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+  }
+  .logoname1{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: var(--font-weight);
+    font-size: 50px;
+    color: white;
+  }
+  .logoname2{
+    font-weight: var(--font-weight);
+    font-size: 50px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+  }
+
+
